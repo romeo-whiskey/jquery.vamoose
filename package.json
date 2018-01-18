@@ -1,0 +1,43 @@
+{
+  "name": "jquery.clearion",
+  "version": "1.0.0",
+  "description": "Accessible jQuery input field clearer",
+  "main": "jquery.clearion.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghostrydr/jquery.clearion.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "jquery",
+    "clear",
+    "clearion",
+    "text",
+    "input",
+    "field",
+    "accessible",
+    "accessibility"
+  ],
+  "author": "Russell Wilson <russell@romeo-whiskey.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.3",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-plumber": "^1.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ghostrydr/jquery.clearion/issues"
+  },
+  "homepage": "https://github.com/ghostrydr/jquery.clearion#readme"
+}

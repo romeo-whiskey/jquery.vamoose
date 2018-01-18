@@ -1,0 +1,53 @@
+$border-color				: #c5c8cc; // Border
+$border 					: 1px solid $border-color;
+$teal 						: #018380; // Accessible Teal "must be used in all digital channels"
+$lighter-blue               : #d1eefc; // $secondary-blue-4 WSAG background color as per Digital
+$body-size-rbf              : 16px;
+$glyphs 					: wj-glyphs;
+$secondary-blue             : #0174b8; // Secondary button background – default state - Text links (in copy, in page site map) - default state - Slideshow buttons (formerly #007bc3)
+
+
+
+.input-wrapper {
+    input {
+        display: block;
+        width: 100%;
+        height: 44px;
+        padding: 0 10px;
+        border: $border;
+        &[type=text]::-ms-clear {
+            display: none;
+        }
+        &:focus {
+            outline: none;
+            border-color: $teal;
+            background: $lighter-blue;
+        }
+    }
+    &.has-focus {
+        input {
+            outline: none;
+            border-color: $teal;
+            background: $lighter-blue;
+        }
+        .clear-input {
+            display: block;
+            position: absolute;
+            top: 25px;
+            right: 0;
+            height: 44px;
+
+            &::after {
+                font-size: $body-size-rbf;
+                font-family: $glyphs;
+                color: $secondary-blue;
+                content: "\e626";
+                cursor: pointer;
+                top: 25%;
+                right: 15px;
+                position: absolute;
+                margin-right: 10px;
+            }
+        }
+    }
+}
