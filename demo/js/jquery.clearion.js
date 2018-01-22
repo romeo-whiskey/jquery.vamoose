@@ -30,7 +30,7 @@
                 if (e.which === 32 || e.which === 13 || e.which === 1) {
                     // space enter left-click
                     e.preventDefault();
-                    $(this).prev().val('').focus();
+                    $(this).prev().val('').focus().trigger('change');
                 }
             });
         });
