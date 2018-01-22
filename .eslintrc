@@ -1,0 +1,52 @@
+{
+    "env": {
+        "browser": true
+    },
+    "root": true,
+    "extends": ["eslint-config-airbnb"],
+    "globals": {
+        "$": false,
+        "WVIRBF": false,
+        "westjet": false,
+        "WestJet": false,
+        "wj": false,
+        "wjDotComHost": false,
+        "gulp": false,
+        "Utility": false,
+        "bowser": false,
+        "WVI": true,
+        "Cleave": false,
+        "webshims": false
+    },
+    "rules": {
+        "indent": ["error", 4, { 
+            "SwitchCase": 1 
+        }],
+        "no-unused-expressions": ["error", {
+            "allowShortCircuit": true,
+            "allowTernary": true,
+        }],
+        "no-confusing-arrow": ["error", {"allowParens": true}],
+        "max-len": ["warn", {
+            "code": 100,
+            "ignoreComments": true,
+            "ignoreTrailingComments": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true
+        }],
+        "no-param-reassign": ["error", {
+            "props": false
+        }],
+        "no-underscore-dangle": ["off"],
+        "max-nested-callbacks": ["error", 3],
+        "no-unused-vars": ["error", {
+            "varsIgnorePattern": "WestJet|cleave|config"
+        }],
+        "import/no-extraneous-dependencies": ["error", {
+            "devDependencies": ["gulp-tasks/**/*.js", "gulpfile.js", "scripts/*.js"]
+        }],
+        "no-bitwise": ["error", {
+            "int32Hint": true
+        }]
+    }
+}
