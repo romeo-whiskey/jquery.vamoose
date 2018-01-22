@@ -3,7 +3,7 @@
         "browser": true
     },
     "root": true,
-    "extends": ["eslint-config-airbnb"],
+    "extends": ["eslint-config-airbnb-base"],
     "globals": {
         "$": false,
         "WVIRBF": false,
@@ -19,8 +19,8 @@
         "webshims": false
     },
     "rules": {
-        "indent": ["error", 4, { 
-            "SwitchCase": 1 
+        "indent": ["error", 4, {
+            "SwitchCase": 1
         }],
         "no-unused-expressions": ["error", {
             "allowShortCircuit": true,
