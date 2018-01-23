@@ -9,7 +9,7 @@ const autoprefixer = require('gulp-autoprefixer');
 gulp.task('browser-sync', ['css', 'js'],function() {
     bs.init({
         server: {
-            baseDir: "./demo"
+            baseDir: "./"
         },
         // proxy: "localhost:8080" // makes a proxy for localhost:8080
     });
@@ -17,7 +17,7 @@ gulp.task('browser-sync', ['css', 'js'],function() {
 
 gulp.task('watch', ['browser-sync'], function () {
     // gulp.watch("scss/*.scss", ['sass']);
-    gulp.watch("demo/index.html").on('change', bs.reload);
+    gulp.watch("index.html").on('change', bs.reload);
     gulp.watch(["*.js", '!gulpfile.js'], ['js']);
     gulp.watch(["scss/*.s{a,c}ss"], ['css']);
 });
