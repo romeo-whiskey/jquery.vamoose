@@ -1,6 +1,6 @@
 ;(function ( $ ) {
 
-    $.fn.clearion = function(options) {
+    $.fn.vamoose = function(options) {
 
         return this.each(function() {
             var $input = $(this);
