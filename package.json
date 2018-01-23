@@ -1,22 +1,22 @@
 {
-  "name": "jquery.clearion",
+  "name": "jquery.vamoose",
   "version": "0.1.0",
   "description": "Accessible jQuery input field clearer",
-  "main": "jquery.clearion.js",
+  "main": "jquery.vamoose.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ghostrydr/jquery.clearion.git"
+    "url": "git+https://github.com/ghostrydr/jquery.vamoose.git"
   },
   "keywords": [
     "jquery-plugin",
     "ecosystem:jquery",
     "jquery",
     "clear",
-    "clearion",
+    "vamoose",
     "text",
     "input",
     "field",
@@ -41,7 +41,7 @@
     "gulp-sass": "^3.1.0"
   },
   "bugs": {
-    "url": "https://github.com/ghostrydr/jquery.clearion/issues"
+    "url": "https://github.com/ghostrydr/jquery.vamoose/issues"
   },
-  "homepage": "https://github.com/ghostrydr/jquery.clearion#readme"
+  "homepage": "https://github.com/ghostrydr/jquery.vamoose#readme"
 }
