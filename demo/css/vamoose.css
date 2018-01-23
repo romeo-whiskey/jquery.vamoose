@@ -1,5 +1,7 @@
 body, html {
-  height: 100vh; }
+  height: 100vh;
+  padding: 0;
+  margin: 0; }
 
 body {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01827f+0,00467f+100 */
