@@ -1,4 +1,4 @@
-# jquery.clearion
+# jquery.vamoose
 Vamoose is a jQuery plugin that enables inputs to be cleared via the keyboard with a11y in mind.
 
 ## Installation
