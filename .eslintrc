@@ -5,18 +5,7 @@
     "root": true,
     "extends": ["eslint-config-airbnb-base"],
     "globals": {
-        "$": false,
-        "WVIRBF": false,
-        "westjet": false,
-        "WestJet": false,
-        "wj": false,
-        "wjDotComHost": false,
-        "gulp": false,
-        "Utility": false,
-        "bowser": false,
-        "WVI": true,
-        "Cleave": false,
-        "webshims": false
+        "jQuery": false
     },
     "rules": {
         "indent": ["error", 4, {
