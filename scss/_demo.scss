@@ -4,7 +4,7 @@ body, html {
 
 body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01827f+0,00467f+100 */
-    background: rgb(1,130,127); /* Old browsers */
+    background: rgba(0,70,127,1); /* Old browsers */
     background: linear-gradient(135deg, rgba(1,130,127,1) 0%,rgba(0,70,127,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
     display: flex;
@@ -21,7 +21,6 @@ body {
 
     a {
         color: #C6FF00;
-        text-decoration: none;
     }
 
     h1 {

@@ -3,7 +3,7 @@ body, html {
 
 body {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01827f+0,00467f+100 */
-  background: #01827f;
+  background: #00467f;
   /* Old browsers */
   background: linear-gradient(135deg, #01827f 0%, #00467f 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -18,8 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
   body a {
-    color: #C6FF00;
-    text-decoration: none; }
+    color: #C6FF00; }
   body h1 {
     font-weight: 100;
     font-size: 72px;
