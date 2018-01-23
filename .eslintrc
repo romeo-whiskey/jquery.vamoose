@@ -1,0 +1,10 @@
+{
+    "env": {
+        "browser": true
+    },
+    "root": true,
+    "extends": ["jquery"],
+    "globals": {
+        "jQuery": false
+    },
+}
