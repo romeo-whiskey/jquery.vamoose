@@ -26,7 +26,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    right: 1em;
+    right: 0.5em;
     height: 1.42857em;
     line-height: 1.42857em;
     transform: translate(0, -50%); }
@@ -34,10 +34,11 @@
       outline: #0174b8 auto 5px; }
     .input-wrapper.has-focus .clear-input::after {
       color: #0174b8;
-      content: '\f00d';
+      content: '\e870';
       cursor: pointer;
-      font-family: FontAwesome;
-      font-size: 16px; }
+      font-family: "Linearicons-Free";
+      font-size: 24px;
+      font-weight: 800; }
   .input-wrapper.has-focus textarea + .clear-input {
     top: auto;
     bottom: -1.42857em;
@@ -47,4 +48,5 @@
       display: block;
       color: #ffffff;
       font-family: Roboto, "Helvetica Neue", Helvetica, Aral, sans;
+      font-size: 16px;
       content: attr(data-text); }

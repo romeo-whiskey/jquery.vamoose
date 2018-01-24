@@ -44,7 +44,7 @@
             display: block;
             position: absolute;
             top: 50%;
-            right: 1em;
+            right: 0.5em;
             height: $height;
             line-height: $line-height;
             transform: translate(0, -50%);
@@ -55,10 +55,11 @@
 
             &::after {
                 color: $secondary-blue;
-                content: '\f00d';
+                content: '\e870';
                 cursor: pointer;
                 font-family: $glyphs;
-                font-size: $font-size;
+                font-size: $glyph-size;
+                font-weight: 800;
             }
         }
         textarea {
@@ -72,6 +73,7 @@
                     display: block;
                     color: $white;
                     font-family: $font-family;
+                    font-size: $font-size;
                     content: attr(data-text);
                 }
             }
