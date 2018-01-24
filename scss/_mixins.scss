@@ -1,0 +1,5 @@
+@mixin input-hover-state {
+    outline: none;
+    border-color: $teal;
+    background: $lighter-blue;
+}
