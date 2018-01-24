@@ -38,7 +38,8 @@
     "gulp-autoprefixer": "^4.1.0",
     "gulp-babel": "^7.0.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.4"
   },
   "bugs": {
     "url": "https://github.com/ghostrydr/jquery.vamoose/issues"

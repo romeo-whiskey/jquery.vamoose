@@ -1,13 +1,4 @@
-$border-color				: #c5c8cc; // Border
-$border 					: 1px solid $border-color;
-$teal 						: #018380; // Accessible Teal "must be used in all digital channels"
-$lighter-blue               : #d1eefc; // $secondary-blue-4 WSAG background color as per Digital
-$font-size                  : 16px;
-$glyphs 					: FontAwesome;
-$secondary-blue             : #0174b8; // Secondary button background – default state - Text links (in copy, in page site map) - default state - Slideshow buttons (formerly #007bc3)
-$line-height                : 1.42857143em;
-$height                     : $line-height;
-
+@import 'variables';
 @import 'mixins';
 
 .input-wrapper {
@@ -16,12 +7,11 @@ $height                     : $line-height;
     input,
     textarea {
         border: $border;
-        color: #5B646B;
+        color: $text-color;
         display: block;
+        font-size: $font-size;
         font-weight: 300;
         padding: 10px;
-        border: 1px solid $border-color;
-        font-size: $font-size;
         width: 100%;
 
         &:focus {
@@ -37,26 +27,24 @@ $height                     : $line-height;
         }
     }
 
-    textarea {
-        + .clear-input {
-            position: absolute;
-            bottom: -$line-height;
-            right: 0;
+    input {
+        height: 44px;
+
+        &[type='text'] {
+            // sass-lint:disable-all
+            &::-ms-clear {
+                display: none;
+            }
+            // sass-lint:enable-all
         }
     }
 
-
     &.has-focus {
-        input,
-        textarea {
-            @include input-hover-state();
-        }
-
-        input + .clear-input {
+        .clear-input {
             display: block;
             position: absolute;
             top: 50%;
-            right: 2em;
+            right: 1em;
             height: $height;
             line-height: $line-height;
             transform: translate(0, -50%);
@@ -66,17 +54,24 @@ $height                     : $line-height;
             }
 
             &::after {
-                font-size: $font-size;
-                font-family: $glyphs;
                 color: $secondary-blue;
-                content: "\f00d";
+                content: '\f00d';
                 cursor: pointer;
-                position: absolute;
+                font-family: $glyphs;
+                font-size: $font-size;
             }
         }
         textarea {
             + .clear-input {
-                &::before {
+                top: auto;
+                bottom: -$line-height;
+                right: 0;
+                transform: translate(0, 0);
+
+                &::after {
+                    display: block;
+                    color: $white;
+                    font-family: $font-family;
                     content: attr(data-text);
                 }
             }
