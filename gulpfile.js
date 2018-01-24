@@ -4,7 +4,8 @@ const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
 // const concat = require('gulp-concat');
 const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
+const sassLint = require('gulp-sass-lint');
+// const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('browser-sync', ['css', 'js'],function() {
     bs.init({
@@ -26,7 +27,9 @@ gulp.task('css', () => {
     bs.reload();
     return gulp.src('./scss/**/*.*')
         .pipe(plumber())
+        .pipe(sassLint())
         .pipe(sass.sync().on('error', sass.logError))
+        .pipe(sassLint.format())
         // .pipe(autoprefixer())
         .pipe(gulp.dest('demo/css'));
   });

@@ -1,33 +1,34 @@
-body, html {
+$link-colour                : #C6FF00;
+
+body,
+html {
     height: 100vh;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 body {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01827f+0,00467f+100 */
-    background: rgba(0,70,127,1); /* Old browsers */
-    background: linear-gradient(135deg, rgba(1,130,127,1) 0%,rgba(0,70,127,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-    display: flex;
-    font-size: 16px;
-    align-items: center;
-    color: #ffffff;
-    font-family: Roboto, 'Helvetica-Neue', Arial, sans-serif;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    align-items: center;
+    background: rgba(0,70,127,1); /* Old browsers */
+    background: linear-gradient(135deg, rgba(1,130,127,1) 0%,rgba(0,70,127,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    color: $white;
+    display: flex;
+    font-family: Roboto, 'Helvetica-Neue', Arial, sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
 
     a {
-        color: #C6FF00;
+        color: $link-colour;
     }
 
     h1 {
-        font-weight: 100;
         font-size: 72px;
+        font-weight: 100;
         margin-bottom: 0.25em;
     }
 
@@ -41,9 +42,9 @@ body {
     }
 
     footer {
+        border-top: $border;
         margin-top: 2rem;
         padding-top: 2rem;
-        border-top: 1px solid #ccc;
         text-align: center;
     }
 

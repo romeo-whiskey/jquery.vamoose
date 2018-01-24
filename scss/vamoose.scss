@@ -1,48 +1,46 @@
-$border-color				: #c5c8cc; // Border
-$border 					: 1px solid $border-color;
-$teal 						: #018380; // Accessible Teal "must be used in all digital channels"
-$lighter-blue               : #d1eefc; // $secondary-blue-4 WSAG background color as per Digital
-$font-size                  : 16px;
-$glyphs 					: FontAwesome;
-$secondary-blue             : #0174b8; // Secondary button background – default state - Text links (in copy, in page site map) - default state - Slideshow buttons (formerly #007bc3)
-
+@import 'variables';
 @import 'demo';
 
 .input-wrapper {
     position: relative;
-    input {
-        display: block;
-        font-weight: 300;
-        height: 44px;
-        padding: 0 10px;
-        border: $border;
-        color: #5B646B;
-        width: 100%;
-        border: 1px solid $border-color;
-        font-size: $font-size;
 
-        &[type=text]::-ms-clear {
-            display: none;
-        }
+    input,
+    textarea {
+        border: $border;
+        color: $text-color;
+        display: block;
+        font-size: $font-size;
+        font-weight: 300;
+        padding: 0 10px;
+        width: 100%;
+
         &:focus {
-            outline: none;
-            border-color: $teal;
             background: $lighter-blue;
+            border-color: $teal;
+            outline: none;
         }
     }
-    &.has-focus {
-        input {
-            outline: none;
-            border-color: $teal;
-            background: $lighter-blue;
+
+    input {
+        height: 44px;
+
+        &[type='text'] {
+            // sass-lint:disable-all
+            &::-ms-clear {
+                display: none;
+            }
+            // sass-lint:enable-all
         }
+    }
+
+    &.has-focus {
         .clear-input {
             display: block;
-            position: absolute;
-            top: 50%;
-            right: 2em;
             height: 1.42857143em;
             line-height: 1.42857143em;
+            position: absolute;
+            right: 2em;
+            top: 50%;
             transform: translate(0, -50%);
 
             &:focus {
@@ -50,11 +48,11 @@ $secondary-blue             : #0174b8; // Secondary button background – defaul
             }
 
             &::after {
-                font-size: $font-size;
-                font-family: $glyphs;
                 color: $secondary-blue;
-                content: "\f00d";
+                content: '\f00d';
                 cursor: pointer;
+                font-family: $glyphs;
+                font-size: $font-size;
                 position: absolute;
             }
         }
