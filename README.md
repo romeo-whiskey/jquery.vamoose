@@ -11,6 +11,6 @@ Vamoose is a jQuery plugin that enables inputs to be cleared via the keyboard wi
 ## Usage
 ```javascript
 $(function(){
-  $("input").vamoose();
+  $("input, textarea").vamoose();
 });
 ```
