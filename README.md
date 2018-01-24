@@ -14,3 +14,6 @@ $(function(){
   $("input, textarea").vamoose();
 });
 ```
+
+## License
+See [LICENSE.md](LICENSE.md)
