@@ -7,7 +7,7 @@
 
     Vamoose.prototype.init = function() {
         var self = this;
-        this.$wrapper.append( "<span class=\"clear-input\" tabindex=\"0\" role=\"button\" />" );
+        this.renderClearCTA();
 
         this.$element.on( "focus", function() {
             self.elementOnFocus();
@@ -30,6 +30,18 @@
                 self.clearInput.bind( this )();
             }
         } );
+    };
+
+    /**
+     * Renders clear CTA
+     */
+    Vamoose.prototype.renderClearCTA = function() {
+        var $clear = $( "<span class=\"clear-input\" tabindex=\"0\" role=\"button\" />" );
+
+        if ( this.$element.is( "textarea" ) ) {
+            $clear.attr( "data-text", "Clear" );
+        }
+        this.$wrapper.append( $clear );
     };
 
 

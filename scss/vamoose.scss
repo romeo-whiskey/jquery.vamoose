@@ -5,44 +5,60 @@ $lighter-blue               : #d1eefc; // $secondary-blue-4 WSAG background colo
 $font-size                  : 16px;
 $glyphs 					: FontAwesome;
 $secondary-blue             : #0174b8; // Secondary button background – default state - Text links (in copy, in page site map) - default state - Slideshow buttons (formerly #007bc3)
+$line-height                : 1.42857143em;
+$height                     : $line-height;
 
-@import 'demo';
+@import 'mixins';
 
 .input-wrapper {
     position: relative;
-    input {
-        display: block;
-        font-weight: 300;
-        height: 44px;
-        padding: 0 10px;
+
+    input,
+    textarea {
         border: $border;
         color: #5B646B;
-        width: 100%;
+        display: block;
+        font-weight: 300;
+        padding: 10px;
         border: 1px solid $border-color;
         font-size: $font-size;
+        width: 100%;
+
+        &:focus {
+            @include input-hover-state();
+        }
+    }
+
+    input {
+        height: 44px;
 
         &[type=text]::-ms-clear {
             display: none;
         }
-        &:focus {
-            outline: none;
-            border-color: $teal;
-            background: $lighter-blue;
+    }
+
+    textarea {
+        + .clear-input {
+            position: absolute;
+            bottom: -$line-height;
+            right: 0;
         }
     }
+
+
     &.has-focus {
-        input {
-            outline: none;
-            border-color: $teal;
-            background: $lighter-blue;
+        input,
+        textarea {
+            @include input-hover-state();
         }
-        .clear-input {
+
+        input + .clear-input {
             display: block;
             position: absolute;
             top: 50%;
             right: 2em;
-            height: 1.42857143em;
-            line-height: 1.42857143em;
+            height: $height;
+            line-height: $line-height;
             transform: translate(0, -50%);
 
             &:focus {
@@ -56,6 +72,13 @@ $secondary-blue             : #0174b8; // Secondary button background – defaul
                 content: "\f00d";
                 cursor: pointer;
                 position: absolute;
+            }
+        }
+        textarea {
+            + .clear-input {
+                &::before {
+                    content: attr(data-text);
+                }
             }
         }
     }
