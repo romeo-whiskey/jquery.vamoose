@@ -49,6 +49,17 @@ body {
         margin-top: 2rem;
         padding-top: 2rem;
         text-align: center;
+
+        svg {
+            height: 14px;
+            width: 14px;
+            transform: translate(0, 1px);
+            margin: 0 2px;
+
+            path {
+                fill: $white;
+            }
+        }
     }
 
     .container {

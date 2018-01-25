@@ -39,24 +39,28 @@
             right: 0.5em;
             line-height: $line-height;
             transform: translate(0, -50%);
+            width: 1.375em;
+            height: 1.375em;
 
 
             &:focus {
                 outline: $secondary-blue auto 5px;
             }
 
+            &::after,
+            &::before {
+                height: 1px;
+                width: 90%;
+                content: ' ';
+                background: $secondary-blue;
+                display: block;
+                position: absolute;
+                transform: translate(5%, 50%) rotate(45deg);
+                top: 50%;
+            }
+
             &::after {
-                color: $secondary-blue;
-                content: '\e870';
-                cursor: pointer;
-                font-family: $glyphs;
-                font-size: $glyph-size;
-                width: 1em;
-                height: 1em;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: translate(0, -1px);
+                transform: translate(5%, 50%) rotate(-45deg);
             }
         }
         input,

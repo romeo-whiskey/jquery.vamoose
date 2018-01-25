@@ -45,6 +45,13 @@ body {
     margin-top: 2rem;
     padding-top: 2rem;
     text-align: center; }
+    body footer svg {
+      height: 14px;
+      width: 14px;
+      transform: translate(0, 1px);
+      margin: 0 2px; }
+      body footer svg path {
+        fill: #ffffff; }
   body .container {
     flex: 0 0 auto;
     padding: 20px;
