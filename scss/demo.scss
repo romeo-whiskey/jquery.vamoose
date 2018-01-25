@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
+:root { font-size: 18px;  /* default below 600px */ }
+
 body,
 html {
     height: 100vh;
@@ -28,9 +30,9 @@ body {
     }
 
     h1 {
-        font-size: 72px;
         font-weight: 100;
         margin-bottom: 0.25em;
+        @include fluid-text($min_width: 320, $max_width: 540, $min_font: 42, $max_font: 72);
     }
 
     input {
@@ -51,7 +53,9 @@ body {
 
     .container {
         flex: 0 0 auto;
-        max-width: 600px;
+        padding: 20px;
+        width: 530px;
+        max-width: 100%;
         // transform: translate(0, -50%);
     }
 }
