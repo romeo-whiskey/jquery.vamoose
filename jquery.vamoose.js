@@ -1,7 +1,19 @@
 ;( function( $ ) {
+
+    var defaults = {
+        wrapper: null,
+        defaultWrapper: "input-wrapper"
+    };
+
     function Vamoose( element, options ) { // eslint-disable-line  no-unused-vars
+
+        this.options = $.extend( {}, defaults, options );
+
         this.$element = $( element );
-        this.$wrapper = this.$element.wrap( "<div class=\"input-wrapper\" />" ).parent();
+
+        this.$wrapper = this.options.wrapper ?
+            this.$element.closest( this.options.wrapper ) :
+            this.$element.wrap( "<div class=" + this.options.defaultWrapper + " />" ).parent();
         this.init();
     }
 
