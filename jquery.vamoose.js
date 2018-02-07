@@ -1,7 +1,19 @@
 ;( function( $ ) {
+
+    var defaults = {
+        wrapper: null,
+        defaultWrapper: "input-wrapper"
+    };
+
     function Vamoose( element, options ) { // eslint-disable-line  no-unused-vars
+
+        this.options = $.extend( {}, defaults, options );
+
         this.$element = $( element );
-        this.$wrapper = this.$element.wrap( "<div class=\"input-wrapper\" />" ).parent();
+
+        this.$wrapper = this.options.wrapper ?
+            this.$element.closest( this.options.wrapper ) :
+            this.$element.wrap( "<div class=" + this.options.defaultWrapper + " />" ).parent();
         this.init();
     }
 
@@ -36,7 +48,7 @@
      * Renders clear CTA
      */
     Vamoose.prototype.renderClearCTA = function() {
-        var $clear = $( "<span class=\"clear-input\" tabindex=\"0\" role=\"button\" />" );
+        var $clear = $( "<span class=\"clear-input\" tabindex=\"0\" role=\"button\" aria-label=\"Clear previous input.\" />" );
 
         if ( this.$element.is( "textarea" ) ) {
             $clear.attr( "data-text", "Clear" );

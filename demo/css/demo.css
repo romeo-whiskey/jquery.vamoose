@@ -1,3 +1,7 @@
+:root {
+  font-size: 18px;
+  /* default below 600px */ }
+
 body,
 html {
   height: 100vh;
@@ -22,9 +26,15 @@ body {
   body a {
     color: #C6FF00; }
   body h1 {
-    font-size: 72px;
     font-weight: 100;
-    margin-bottom: 0.25em; }
+    margin-bottom: 0.25em;
+    font-size: 42px; }
+    @media (min-width: 320px) and (max-width: 540px) {
+      body h1 {
+        font-size: calc( 42px + (72 - 42) * ( (100vw - 320px) / ( 540 - 320) )); } }
+    @media (min-width: 540px) {
+      body h1 {
+        font-size: 72px; } }
   body input {
     margin-bottom: 20px; }
   body .row > div {
@@ -37,7 +47,9 @@ body {
     text-align: center; }
   body .container {
     flex: 0 0 auto;
-    max-width: 600px; }
+    padding: 20px;
+    width: 530px;
+    max-width: 100%; }
 
 *, *::before, *::after {
   box-sizing: border-box; }
