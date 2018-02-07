@@ -48,7 +48,7 @@
      * Renders clear CTA
      */
     Vamoose.prototype.renderClearCTA = function() {
-        var $clear = $( "<span class=\"clear-input\" tabindex=\"0\" role=\"button\" />" );
+        var $clear = $( "<span class=\"clear-input\" tabindex=\"0\" role=\"button\" aria-label=\"Clear previous input.\" />" );
 
         if ( this.$element.is( "textarea" ) ) {
             $clear.attr( "data-text", "Clear" );
