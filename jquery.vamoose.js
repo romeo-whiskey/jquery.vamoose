@@ -36,8 +36,10 @@
             self.clearOnBlur();
         } );
 
-        this.$wrapper.on( "keydown click", ".clear-input", function( e ) {
-            if ( e.which === 32 || e.which === 13 || e.which === 1 ) { // space enter left-click
+        this.$wrapper.on( "keydown click touchend", ".clear-input", function( e ) {
+
+            // space, enter, left-click, iOS touch
+            if ( e.which === 32 || e.which === 13 || e.type === "click" || e.type === "touchend" ) {
                 e.preventDefault();
                 self.clearInput.bind( this )();
             }
