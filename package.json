@@ -1,6 +1,6 @@
 {
   "name": "jquery.vamoose",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Accessible jQuery input field clearer",
   "main": "jquery.vamoose.js",
   "scripts": {
