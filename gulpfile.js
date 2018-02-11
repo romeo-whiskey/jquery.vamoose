@@ -10,22 +10,21 @@ const sassLint = require('gulp-sass-lint');
 gulp.task('browser-sync', ['css', 'js'],function() {
     bs.init({
         server: {
-            baseDir: "./"
+            baseDir: './demo'
         },
         // proxy: "localhost:8080" // makes a proxy for localhost:8080
     });
 });
 
 gulp.task('watch', ['browser-sync'], function () {
-    // gulp.watch("scss/*.scss", ['sass']);
-    gulp.watch("index.html").on('change', bs.reload);
-    gulp.watch(["*.js", '!gulpfile.js'], ['js']);
-    gulp.watch(["scss/*.s{a,c}ss"], ['css']);
+    gulp.watch('demo/index.html').on('change', bs.reload);
+    gulp.watch(['src/js/*.js'], ['js']);
+    gulp.watch(['src/scss/*.s{a,c}ss'], ['css']);
 });
 
 gulp.task('css', () => {
     bs.reload();
-    return gulp.src('./scss/**/*.*')
+    return gulp.src('src/scss/**/*.*')
         .pipe(plumber())
         .pipe(sassLint())
         .pipe(sass.sync().on('error', sass.logError))
@@ -36,13 +35,13 @@ gulp.task('css', () => {
 
 gulp.task('js', () => {
     bs.reload();
-    return gulp.src(['*.js', '!_*.js', '!gulpfile.js'])
+    return gulp.src(['src/js/*.js'])
         .pipe(plumber())
         // .pipe(concat('concat.js'))
         .pipe(babel({
-            "presets": [
-                "env",
-                "babel-preset-stage-3"
+            'presets': [
+                'env',
+                'babel-preset-stage-3'
             ]
         }))
         .pipe(gulp.dest('demo/js'));

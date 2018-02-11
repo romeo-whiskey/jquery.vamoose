@@ -1,10 +1,20 @@
 "use strict";
 
 ;(function ($) {
+
+    var defaults = {
+        wrapper: null,
+        defaultWrapper: "input-wrapper"
+    };
+
     function Vamoose(element, options) {
         // eslint-disable-line  no-unused-vars
+
+        this.options = $.extend({}, defaults, options);
+
         this.$element = $(element);
-        this.$wrapper = this.$element.wrap("<div class=\"input-wrapper\" />").parent();
+
+        this.$wrapper = this.options.wrapper ? this.$element.closest(this.options.wrapper) : this.$element.wrap("<div class=" + this.options.defaultWrapper + " />").parent();
         this.init();
     }
 
@@ -27,9 +37,10 @@
             self.clearOnBlur();
         });
 
-        this.$wrapper.on("keydown click", ".clear-input", function (e) {
-            if (e.which === 32 || e.which === 13 || e.which === 1) {
-                // space enter left-click
+        this.$wrapper.on("keydown click touchend", ".clear-input", function (e) {
+
+            // space, enter, left-click, iOS touch
+            if (e.which === 32 || e.which === 13 || e.type === "click" || e.type === "touchend") {
                 e.preventDefault();
                 self.clearInput.bind(this)();
             }
@@ -40,7 +51,7 @@
      * Renders clear CTA
      */
     Vamoose.prototype.renderClearCTA = function () {
-        var $clear = $("<span class=\"clear-input\" tabindex=\"0\" role=\"button\" />");
+        var $clear = $("<span class=\"clear-input\" tabindex=\"0\" role=\"button\" aria-label=\"Clear previous input.\" />");
 
         if (this.$element.is("textarea")) {
             $clear.attr("data-text", "Clear");
