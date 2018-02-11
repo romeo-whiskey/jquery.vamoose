@@ -7,12 +7,12 @@ const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
 // const autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('browser-sync', ['css', 'js'],function() {
+gulp.task('browser-sync', ['css', 'css:demo', 'js'],function() {
     bs.init({
         server: {
-            baseDir: './demo'
+            baseDir: './'
         },
-        // proxy: "localhost:8080" // makes a proxy for localhost:8080
+        startPath: 'demo',
     });
 });
 
@@ -22,16 +22,26 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(['src/scss/*.s{a,c}ss'], ['css']);
 });
 
-gulp.task('css', () => {
+gulp.task('css:demo', () => {
     bs.reload();
-    return gulp.src('src/scss/**/*.*')
+    return gulp.src('src/scss/demo.scss')
         .pipe(plumber())
         .pipe(sassLint())
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(sassLint.format())
         // .pipe(autoprefixer())
         .pipe(gulp.dest('demo/css'));
-  });
+});
+gulp.task('css', () => {
+    bs.reload();
+    return gulp.src('src/scss/jquery.vamoose.scss')
+        .pipe(plumber())
+        .pipe(sassLint())
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(sassLint.format())
+        // .pipe(autoprefixer())
+        .pipe(gulp.dest('dist/css'));
+});
 
 gulp.task('js', () => {
     bs.reload();
@@ -44,5 +54,5 @@ gulp.task('js', () => {
                 'babel-preset-stage-3'
             ]
         }))
-        .pipe(gulp.dest('demo/js'));
+        .pipe(gulp.dest('dist/js'));
 });
