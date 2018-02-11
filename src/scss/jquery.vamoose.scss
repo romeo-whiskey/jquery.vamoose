@@ -15,7 +15,7 @@
         width: 100%;
 
         &:focus {
-            @include input-hover-state();
+            @include input-hover-state;
         }
     }
 
@@ -34,10 +34,10 @@
     &.has-focus {
         .clear-input {
             display: block;
-            position: absolute;
-            top: 50%;
-            right: 0.5em;
             line-height: $line-height;
+            position: absolute;
+            right: .5em;
+            top: 50%;
             transform: translate(0, -50%);
 
 
@@ -46,38 +46,40 @@
             }
 
             &::after {
+                align-items: center;
                 color: $secondary-blue;
                 content: '\e870';
                 cursor: pointer;
+                display: flex;
                 font-family: $glyphs;
                 font-size: $glyph-size;
-                width: 1em;
                 height: 1em;
-                display: flex;
-                align-items: center;
                 justify-content: center;
                 transform: translate(0, -1px);
+                width: 1em;
             }
         }
+
         input,
         textarea {
-            @include input-hover-state();
+            @include input-hover-state;
         }
+
         textarea {
             + .clear-input {
-                top: auto;
                 bottom: -$line-height;
                 right: 0;
+                top: auto;
                 transform: translate(0, 0);
 
                 &::after {
-                    display: block;
                     color: $white;
+                    content: attr(data-text);
+                    display: block;
                     font-family: $font-family;
                     font-size: $font-size;
-                    content: attr(data-text);
-                    width: 100%;
                     text-align: right;
+                    width: 100%;
                 }
             }
         }
