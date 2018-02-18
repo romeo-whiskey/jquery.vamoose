@@ -5,7 +5,12 @@
   "main": "jquery.vamoose.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "build:gh-page": "gulp gh-pages-preflight",
+    "deploy": "npm run build:gh-page && gh-pages -d gh-page/",
+    "deploy:major": "npm version major && npm run deploy",
+    "deploy:minor": "npm version minor && npm run deploy",
+    "deploy:patch": "npm version patch && npm run deploy",
   },
   "repository": {
     "type": "git",
@@ -34,6 +39,7 @@
     "eslint": "^4.15.0",
     "eslint-config-jquery": "^1.0.1",
     "eslint-plugin-import": "^2.8.0",
+    "gh-pages": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-babel": "^7.0.0",

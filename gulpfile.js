@@ -19,10 +19,10 @@ gulp.task('browser-sync', ['css', 'css:demo', 'js'],function() {
     });
 });
 
-gulp.task('watch', ['browser-sync'], function () {
+gulp.task('watch', ['browser-sync'], () => {
     gulp.watch('demo/index.html').on('change', bs.reload);
     gulp.watch(['src/js/*.js'], ['js']);
-    gulp.watch(['src/scss/*.s{a,c}ss'], ['css']);
+    gulp.watch(['src/scss/*.scss'], ['css', 'css:demo']);
 });
 
 gulp.task('css:demo', () => {
@@ -35,6 +35,7 @@ gulp.task('css:demo', () => {
         .pipe(autoprefixer())
         .pipe(gulp.dest('demo/css'));
 });
+
 gulp.task('css', () => {
     bs.reload();
     return gulp.src('src/scss/jquery.vamoose.scss')
@@ -64,4 +65,14 @@ gulp.task('js', () => {
         .pipe(uglify())
         .pipe(rename({ extname: '.min.js' }))
         .pipe(gulp.dest('dist/js'));;
+});
+
+gulp.task('gh-pages-preflight', ['css', 'css:demo', 'js'], (done) => {
+    gulp.src('./demo/js/jquery.vamoose.js')
+        .pipe(gulp.dest('./gh-page/js'));
+    gulp.src('./demo/css/*.css')
+        .pipe(gulp.dest('./gh-page/css'));
+    gulp.src('./demo/index.html')
+        .pipe(gulp.dest('./gh-page/'));
+    done();
 });
