@@ -16,14 +16,20 @@ html {
 body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: rgba(0, 70, 127, 1); // Old browsers
     background: linear-gradient(135deg, rgba(1, 130, 127, 1) 0%,rgba(0, 70, 127, 1) 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
     color: $white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-family: Roboto, 'Helvetica-Neue', Arial, sans-serif;
     font-size: 16px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
     width: 100%;
 
@@ -55,7 +61,9 @@ body {
     }
 
     .container {
-        flex: 0 0 auto;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
         max-width: 100%;
         padding: 20px;
         width: 530px;
@@ -66,7 +74,8 @@ body {
     &,
     &::before,
     &::after {
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     }
   }
 

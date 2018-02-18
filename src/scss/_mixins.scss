@@ -5,15 +5,15 @@
 }
 
 // https://www.madebymike.com.au/writing/precise-control-responsive-typography/
-@mixin fluid-text($min_width: 600, $max_width: 900, $min_font: 42, $max_font: 72) {
+@mixin fluid-text($min-width: 600, $max-width: 900, $min-font: 42, $max-font: 72) {
 
-    font-size: #{$min_font}px;
+    font-size: #{$min-font}px;
 
-    @media (min-width: #{$min_width}px) and (max-width: #{$max_width}px){
-        font-size: calc( #{$min_font}px + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    @media (min-width: #{$min-width}px) and (max-width: #{$max-width}px){
+        font-size: calc( #{$min-font}px + (#{$max-font} - #{$min-font}) * ( (100vw - #{$min-width}px) / ( #{$max-width} - #{$min-width}) ));
     }
-    @media (min-width: #{$max_width}px){
-        font-size: #{$max_font}px;
+    @media (min-width: #{$max-width}px){
+        font-size: #{$max-font}px;
     }
 
 }
