@@ -8,9 +8,9 @@
     "start": "gulp watch",
     "build:gh-page": "gulp gh-pages-preflight",
     "deploy": "npm run build:gh-page && gh-pages -d gh-page/",
-    "deploy:major": "npm version major && npm run deploy",
-    "deploy:minor": "npm version minor && npm run deploy",
-    "deploy:patch": "npm version patch && npm run deploy",
+    "deploy:major": "npm run deploy && npm version major",
+    "deploy:minor": "npm run deploy && npm version minor",
+    "deploy:patch": "npm run deploy && npm version patch"
   },
   "repository": {
     "type": "git",
