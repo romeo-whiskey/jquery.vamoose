@@ -9,6 +9,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require('gulp-rename');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
+const processhtml = require('gulp-processhtml');
 
 gulp.task('browser-sync', ['css', 'css:demo', 'js'],function() {
     bs.init({
@@ -73,6 +74,9 @@ gulp.task('gh-pages-preflight', ['css', 'css:demo', 'js'], (done) => {
     gulp.src('./demo/css/*.css')
         .pipe(gulp.dest('./gh-page/css'));
     gulp.src('./demo/index.html')
+        .pipe(processhtml({
+            env: 'production'
+        }))
         .pipe(gulp.dest('./gh-page/'));
     done();
 });
