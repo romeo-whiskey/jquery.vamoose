@@ -1,0 +1,5 @@
+!dist/
+gh-page/
+src/
+test/
+gulpfile.js

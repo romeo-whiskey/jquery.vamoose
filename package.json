@@ -2,7 +2,7 @@
   "name": "jquery.vamoose",
   "version": "0.2.2",
   "description": "Accessible jQuery input field clearer",
-  "main": "jquery.vamoose.js",
+  "main": "dist/js/jquery.vamoose.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp watch",
