@@ -1,4 +1,6 @@
 # jquery.vamoose
+[![npm version](https://badge.fury.io/js/jquery.vamoose.svg)](https://badge.fury.io/js/jquery.vamoose)
+
 Vamoose is a jQuery plugin that enables inputs to be cleared via the keyboard with a11y in mind.
 
 ## Installation
