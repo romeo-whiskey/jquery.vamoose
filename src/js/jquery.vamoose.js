@@ -102,7 +102,7 @@
      * @returns {void}
      */
     Vamoose.prototype.clearInput = function() {
-        $( this ).prev().val( "" ).focus().trigger( "change" );
+        $( this ).prev().val( "" ).focus().trigger( "change" ).trigger( "input" );
     };
 
     $.fn.vamoose = function( options ) {
